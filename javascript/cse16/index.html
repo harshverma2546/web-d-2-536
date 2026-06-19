@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result Management System</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align:center;
+            margin-top:50px;
+        }
+        input{
+            padding:8px;
+            margin:5px;
+        }
+        button{
+            padding:10px 20px;
+        }
+        #result{
+            margin-top:20px;
+            font-size:18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Result Management System</h2>
+
+    <input type="text" id="name" placeholder="Student Name"><br>
+
+    <input type="number" id="sub1" placeholder="Subject 1 Marks"><br>
+    <input type="number" id="sub2" placeholder="Subject 2 Marks"><br>
+    <input type="number" id="sub3" placeholder="Subject 3 Marks"><br>
+    <input type="number" id="sub4" placeholder="Subject 4 Marks"><br>
+    <input type="number" id="sub5" placeholder="Subject 5 Marks"><br>
+
+    <button onclick="calculateResult()">Calculate Result</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateResult() {
+
+            let name = document.getElementById("name").value;
+
+            let s1 = Number(document.getElementById("sub1").value);
+            let s2 = Number(document.getElementById("sub2").value);
+            let s3 = Number(document.getElementById("sub3").value);
+            let s4 = Number(document.getElementById("sub4").value);
+            let s5 = Number(document.getElementById("sub5").value);
+
+            let total = s1 + s2 + s3 + s4 + s5;
+            let percentage = total / 5;
+
+            let grade;
+
+            if (percentage >= 90)
+                grade = "A";
+            else if (percentage >= 75)
+                grade = "B";
+            else if (percentage >= 60)
+                grade = "C";
+            else if (percentage >= 40)
+                grade = "D";
+            else
+                grade = "F";
+
+            document.getElementById("result").innerHTML =
+                "<h3>Result</h3>" +
+                "Name: " + name + "<br>" +
+                "Total Marks: " + total + "/500<br>" +
+                "Percentage: " + percentage.toFixed(2) + "%<br>" +
+                "Grade: " + grade;
+        }
+    </script>
+
+</body>
+</html>

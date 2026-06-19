@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Clone - Homepage</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="amz.css">
+</head>
+<body>
+
+<header>
+  <div class="amazon-header">
+    <div class="logo" id="logoBtn">
+      <i class="fab fa-amazon"></i>
+      <span>amazon</span>
+    </div>
+
+    <div class="location" id="locationBtn">
+      <i class="fas fa-map-marker-alt"></i>
+      <div class="location-text">
+        <small>Deliver to</small>
+        <strong>India</strong>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <select>
+        <option>All</option>
+        <option>Electronics</option>
+        <option>Books</option>
+        <option>Fashion</option>
+      </select>
+
+      <input type="text" placeholder="Search Amazon" id="searchInput">
+      <button id="searchBtn">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+
+    <div class="nav-icons">
+      <div class="nav-item" id="signInBtn">
+        <div class="line1">Hello, Sign in</div>
+        <div class="line2">Account & Lists</div>
+      </div>
+
+      <div class="nav-item" id="returnsBtn">
+        <div class="line1">Returns</div>
+        <div class="line2">& Orders</div>
+      </div>
+
+      <div class="cart-icon" id="cartIcon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCountDisplay">0</span>
+        <div class="line2">Cart</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-links">
+    <a href="#"><i class="fas fa-bars"></i> All</a>
+    <a href="#">Today's Deals</a>
+    <a href="#">Customer Service</a>
+    <a href="#">Registry</a>
+    <a href="#">Gift Cards</a>
+    <a href="#">Sell</a>
+  </div>
+</header>
+
+<div class="carousel-container">
+  <div class="carousel-slide" id="carouselSlide">
+    <div class="slide">
+      <img src="https://picsum.photos/id/20/1400/350" alt="">
+      <div class="slide-caption">⚡ Big Electronics Sale | Up to 60% off</div>
+    </div>
+
+    <div class="slide">
+      <img src="https://picsum.photos/id/26/1400/350" alt="">
+      <div class="slide-caption">📚 Books & More | Bestsellers starting ₹99</div>
+    </div>
+
+    <div class="slide">
+      <img src="https://picsum.photos/id/96/1400/350" alt="">
+      <div class="slide-caption">👗 Fashion Week | Flat 40% off + Extra ₹250</div>
+    </div>
+  </div>
+
+  <button class="carousel-btn prev" id="prevBtn">❮</button>
+  <button class="carousel-btn next" id="nextBtn">❯</button>
+</div>
+
+<div class="dots" id="dotsContainer"></div>
+
+<div class="products-section">
+  <div class="section-title">🌟 Recommended for you</div>
+  <div class="product-grid" id="productGrid"></div>
+</div>
+
+<div class="footer">
+  <div>
+    <a href="#">Back to top</a> |
+    <a href="#">Conditions of Use</a> |
+    <a href="#">Privacy Notice</a>
+  </div>
+  <hr>
+  <div>©️ 1996-2025 Amazon Clone</div>
+</div>
+
+<div id="cartModal" class="cart-modal">
+  <div class="cart-modal-content">
+    <span class="close-cart">&times;</span>
+    <h2>Your Shopping Cart</h2>
+
+    <div id="cartItemsList" class="cart-items-list">
+      <p>Your cart is empty.</p>
+    </div>
+
+    <div class="cart-total">
+      <strong>Total: $<span id="cartTotal">0.00</span></strong>
+    </div>
+
+    <button id="checkoutBtn" class="checkout-btn">
+      Proceed to Checkout
+    </button>
+  </div>
+</div>
+
+<script src="amz.js"></script>
+</body>
+</html>
