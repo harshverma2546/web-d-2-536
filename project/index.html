@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperature Converter</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        text-align: center;
+        width: 300px;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    input {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 15px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    #result {
+        margin-top: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #222;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Temperature Converter</h2>
+
+    <input type="number" id="tempInput" placeholder="Enter temperature">
+
+    <div>
+        <button onclick="celsiusToFahrenheit()">
+            Celsius → Fahrenheit
+        </button>
+
+        <button onclick="fahrenheitToCelsius()">
+            Fahrenheit → Celsius
+        </button>
+    </div>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function celsiusToFahrenheit() {
+    let celsius = parseFloat(document.getElementById("tempInput").value);
+
+    if (isNaN(celsius)) {
+        document.getElementById("result").innerHTML =
+            "Please enter a valid number.";
+        return;
+    }
+
+    let fahrenheit = (celsius * 9/5) + 32;
+
+    document.getElementById("result").innerHTML =
+        `${celsius} °C = ${fahrenheit.toFixed(2)} °F`;
+}
+
+function fahrenheitToCelsius() {
+    let fahrenheit = parseFloat(document.getElementById("tempInput").value);
+
+    if (isNaN(fahrenheit)) {
+        document.getElementById("result").innerHTML =
+            "Please enter a valid number.";
+        return;
+    }
+
+    let celsius = (fahrenheit - 32) * 5/9;
+
+    document.getElementById("result").innerHTML =
+        `${fahrenheit} °F = ${celsius.toFixed(2)} °C`;
+}
+</script>
+
+</body>
+</html>
